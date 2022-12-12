@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>ECMA scripting</h1>
+        <script>
+            for(var i=1;i<5;i++){
+                //some code
+            }
+            console.log(i); //scope of the variable i, lets you see code outside forloop into console (not sure)
+
+            /*for(let j=1;j<5;j++){
+                //some code
+            }
+            console.log(j); */      //let is used to limit the scope of j, so it will not sohow in console
+
+            let k=2;        //Here the let is outside the forloop so the scope will be allowed to be displayed outside and in console
+            for(let k=1;k<5;k++){
+                //some code
+            }
+            console.log(k);
+
+            const campus = "north";
+            console.log(campus);
+            // campus="downtown";
+
+            let colors=["black","red","green","yellow"];
+            console.log(colors[2]);
+            
+            for(let i=0;i<4;i++){
+                console.log(colors[i])
+            }
+
+            //FOR OF LOOPS *********************************************************
+
+            for(let c of colors){               //for of loop
+                console.log(c);
+            }
+
+            let name = "ronak";
+            for(let y of name){
+                console.log(y);
+            }
+
+            //template literals *******************************************************
+            let collegename =`Humber            
+                                   college`;        /*these are backticksnext to 1 on keyboard*/
+            console.log(collegename);
+
+            age1=40;
+            age2=20;
+            let myString =`My age is ${age1} and your age is ${age2}. Combining both ages is ${age1+age2}`; //these are backticks next to 1 on keyboard
+            let myString1 ="My age is "+age1+" and your age is " +age2+ ". Combining both ages is "+(age1 + age2) ; //these are double quotes
+            console.log(myString);
+            console.log(myString1);
+
+            //Arrow function **********************************************
+            //normal function *********************************************
+
+            var f1 = function myAddition(x,y){
+                        return(x+y);
+            }
+            console.log(f1(3,4));
+
+            //arrowfxn
+
+            var f2=(x,y)=> x+y;     //using "fat arrow key" instead of making a function and returning the math
+            console.log(f2(3,4));
+
+            var ageTest=(name,age)=>{
+                if(age<18)
+                    console.log(`${name} is minor`);
+                else
+                    console.log(`${name} is adult`);
+            }
+            ageTest("Ronak",18); //this method is used to eliminate multiplae lines and if will follow if and else rules for final
+
+            //rest paramaters*************************************************
+
+            function sortColors(...colorNames){                 //rest parameter "..."
+                return colorNames.sort();           
+
+            }
+            console.log(sortColors("black","red","white","green","blue"));
+            console.log(sortColors("black","red","white","green","blue","orange","purple"))
+
+
+        </script>
+
+    </body>
+</html>
